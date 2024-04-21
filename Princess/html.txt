@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #f755a9;
+  --primary-color-dark: #9333ea;
+  --secondary-color: #5004ca;
+  --text-dark: #91056e;
+  --text-light: #000000;
+  --extra-light: #faf5ff;
+  --max-width: 1200px;
+}
+.body{
+    width: 100%;
+    height: 100vh;
+    background-image:url(background.jpg);
+    background-size: cover;   
+    background-position: center;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    
+}
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+.maincontainer{
+  width: 100%;
+  height: 100%;
+  background-image:url(Background.jpg);
+  background-size: cover;   
+  background-position: center;
+  display: inline-table;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 99;
+  height: 10%;
+}
+
+.nav__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #101011;
+  transition: 0.3s;
+}
+nav .logo a:hover {
+  color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+  display: none;
+}
+
+nav input {
+  display: none;
+}
+nav .checkbox i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  transition: left 0.3s;
+}
+
+ul li a {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  color: #505050;
+  transition: 0.3s;
+}
+
+ul li a:hover {
+  border-top-color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.section__container {
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  color: var(--text-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: #2b2b2b;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+
+.title span {
+  font-weight: 600;
+}
+
+.description {
+  line-height: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.action__btns {
+  margin-top: 5%;
+  display: flex;
+  gap: 1rem;
+}
+
+.action__btns button {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 1rem 3rem;
+  outline: none;
+  border: blue;
+  border-radius: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.portfolio {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.portfolio:hover {
+  background-color: var(--primary-color-dark);
+}
+
+
+.image {
+  display: grid;
+  place-items: center;
+}
+
+.image img {
+  width: min(25rem, 90%);
+  border-radius: 0%;
+}
+
+@media (width < 750px) {
+  nav .checkbox {
+    display: block;
+  }
+
+  ul {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 85px);
+    left: -100%;
+    top: 85px;
+    background-color: var(--extra-light);
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  nav #check:checked ~ ul {
+    left: 0;
+  }
+
+  ul li a {
+    font-size: 1.25rem;
+  }
+
+  .section__container {
+    padding: 10rem 1rem 5rem 1rem;
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .image {
+    grid-area: 1/1/2/2;
+  }
+
+  .action__btns {
+    margin: auto;
+  }
+}
+
+/*-----------------------------------*\
+  #About
+\*-----------------------------------*/
+.about__page{
+  padding-left: 2%;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr .1fr 1.3fr 1.3fr 0.8fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "titles1 titles titles titles"
+    "sidebar content1 content2 content3"
+    "sidebar content4 content5 content6"
+    "sidebar footer footer footer";
+  grid-gap: 0.2rem;
+}
+:root {
+  --main-radius: 15px;
+  --main-padding: 5px;
+  
+}
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr .1fr 1.3fr 1.3fr 0.8fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "titles1 titles titles titles"
+    "sidebar content1 content2 content3"
+    "sidebar content4 content5 content6"
+    "sidebar footer footer footer";
+  grid-gap: 0.2rem;
+}
+h1{
+  color: #310000;
+}
+h2{
+  margin-left: 2%;
+  font-style: italic;
+  font-size: large;
+
+}
+.d1 {
+  text-align: left;
+  margin-left: 15%;
+  margin-right: 5%;
+  font-size: large;
+
+}
+
+.nav {
+  position: relative;
+  grid-area: nav;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+main {
+  background: #84ffff;
+  grid-area: main;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+#sidebar {
+  border: solid rgb(128, 72, 104);
+  background: #ffcae9;
+  grid-area: sidebar;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#titles1{
+    grid-area: titles1;
+  border-radius: var(--main-radius);;
+}
+#titles{
+  grid-area: titles;
+  border-radius: var(--main-radius);
+}
+#content4 {
+  border: solid rgb(128, 72, 104);
+  background: #ffcae9;
+  grid-area: content4;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content5 {
+  border: solid rgb(128, 72, 104);
+  background: #ffcae9;
+  grid-area: content5;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content6 {
+  border: solid rgb(128, 72, 104);
+  background: #ffcae9;;
+  grid-area: content6;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+#content1 {
+  border: solid rgb(128, 72, 104);
+  background: #ffcae9;
+  grid-area: content1;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content2 {
+  border: solid rgb(128, 72, 104);
+  background: #ffcae9;
+  grid-area: content2;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content3 {
+  border: solid rgb(128, 72, 104);
+  background: #ffcae9;
+  grid-area: content3;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+footer {
+  border: solid rgb(128, 72, 104);
+  background: #ffcae9;
+  grid-area: footer;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+
+@media only screen and (max-width: 550px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.4fr 1.2fr 1.2fr 1.2fr 1.2fr 1.2fr 1.2fr 1fr;
+    grid-template-areas:
+      "nav"
+      "sidebar"
+      "content4"
+      "content5"
+      "content6"
+      "content1"
+      "content2"
+      "content3"
+      "footer";
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+    grid-template-areas:
+      "nav"
+      "sidebar"
+      "main"
+      "content1"
+      "content2"
+      "content3"
+      "footer";
+  }
+}
+/*-----------------------------------*\
+  #notes
+\*-----------------------------------*/
+.notes{
+  margin-top: 5%;
+  margin-left: 2%;
+  margin-bottom: 5%;
+  background:  #ffaddd;
+  border-radius: .5rem;
+  padding:3rem rem;
+  position: relative;
+  border: solid rgb(107, 11, 70);
+}
+.d2{
+  color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+/*-----------------------------------*\
+  #review
+\*-----------------------------------*/
+.review .box-container {
+  margin-left: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-bottom: 50px;
+}
+.review .box-container .box{
+  flex: 1 1 1rem;
+  background-color: #fcd5e9;
+  border-radius: .5rem;
+  padding:3rem rem;
+  position: relative;
+  border: solid rgb(114, 3, 68);
+}
+.review .box-container .box .fa-qoute-right{
+  position: absolute;
+  bottom: 3rem; right:3rem;
+  color: #eee;
+
+}
+.review .box-container .box .stars{
+  color: rgb(255, 218, 55);
+  font-size: 2rem;
+}
+.review .box-container .box p{
+  color: black;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-top: 1rem;
+  margin-left: 21px;
+  margin-right: 21px;
+  margin-bottom: 21px;
+}
+.review .box-container .box .user{
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+}
+.review .box-container .box .user img{
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+.review .box-container .box .user h3{
+  font-size: 1.5rem;
+}
+.heading{
+  margin-left: 2%
+}
+
+/*-----------------------------------*\
+  #Contacts
+\*-----------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.contact{
+  text-align: center;
+  background: #101011;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+.wrapper{
+  display: inline-flex;
+  
+}
+.wrapper .icon{
+  margin: 0 20px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon span{
+  display: block;
+  height: 60px;
+  width: 60px;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon span i{
+  line-height: 60px;
+  font-size: 25px;
+}
+.wrapper .icon .tooltip{
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background: #fff;
+  color: #fff;
+  padding: 10px 18px;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 25px;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover .tooltip{
+  top: -70px;
+  opacity: 1;
+  pointer-events: auto;
+}
+.icon .tooltip:before{
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  background: #fff;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%) rotate(45deg);
+  transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover span{
+  color: #fff;
+}
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip{
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+}
+.wrapper .facebook:hover span,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip:before{
+  background: #3B5999;
+}
+.wrapper .twitter:hover span,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip:before{
+  background: #46C1F6;
+}
+.wrapper .instagram:hover span,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip:before{
+  background: #e1306c;
+}
+.wrapper .github:hover span,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip:before{
+  background: #31b616;
+}
+
+  </style>
+  <body>
+    <nav>
+      <div class="nav__content" id="Home">
+        <div class="logo"><a href="#">doucex</a></div>
+        <label for="check" class="checkbox">
+          <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check" />
+        <ul>
+          <li><a href="#section">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#notes">Notes</a></li>
+          <li><a href="#review">Review</a></li>
+        </ul>
+      </div>
+      <div>
+        
+      </div>
+    </nav>
+<main class="maincontainer">
+    <section class="section" id="section">
+      <div class="section__container">
+        <div class="content">
+          <p class="subtitle"></p>
+          <h1 class="title">
+           It's Princess Grace
+          </h1>
+          <p class="description">
+            she's a sucker for pink, so get ready for the pink world she'll bring you into as you get to know her more.
+             hehe. by the way, these are the emails she can't send (especially to her strict parents), so please, 
+            let's not spill any juices you might find here. stream espresso by sabrina. :^
+          </p>
+          <div class="action__btns">
+            <a href="#contact">  
+              <button class="portfolio">Social Accounts</button></a>
+
+          </div>
+        </div>
+        <div class="image">
+          <img src="profile4.png" alt="profile" />
+        </div>
+      </div>
+    </section>
+
+    <section class="about__page" id="about">
+      <div id="sidebar"><br> 
+        <video width="390" height="240" controls id="video" class="vid">
+          <source src="Video.mp4" type="video/mp4">
+        </video>
+        <h3>
+        <h2>Full name:</h2>
+        <p>- Princess Grace Torento Tesnado</p>  <br>
+       <h2>Nickname:</h2>
+       <p>- Sweet</p> <br>
+      <h2>Birthday:</h2>
+      <p>- November 18, 2003</p> <br>
+      <h2>Zodiac Sign:</h2> 
+      <p> - Scorpio </p><br>
+      <h2>College Program: </h2>
+      <p> - Bachelor of Arts in English Language Studies</p> <br>
+      <h2>From: </h2> 
+      <p>- Koronadal City, South Cotabato </p><br>
+     </h3>
+
+     </div>
+     <div id="titles1"><h1>About</h1></div>
+     <div id="titles"><h1>HOBBIES</h1></div>
+     <div id="content1"><h2>Calligraphy</h2> <p class="d1"> (that's why she wanna do baking and make cakes so she could finally use her calligraphy thing in bday greetings) </p></div>
+     <div id="content2"><h2>Painting</h2><p class="d1">(as a frustrated artist, she does painting if and only if it is painting by numbers)</p></div>
+     <div id="content3"><h2>Crocheting</h2><p class="d1">(her first work was her miminks' cute hat)</p></div>
+     <div id="content4"><h2>Reading</h2><p class="d1"> (she reads a lot but only those romantic stories. she doesn't read her acad notes)</p></div>
+     <div id="content5"><h2>Simping</h2><p class="d1"> (she simps all the f time, anywhere, anytime)</p></div>
+     <div id="content6"><h2>Crying</h2><p class="d1">(if she could rate her hobbies, crying would be at the very top. this is what she's doing when she's bored, happy, sad, angry, literally in any moment, weirdo)</p></div>
+     <footer> <h2>Facts about her that no one asked for:</h2> 
+<br> She has one serious, unapologetic, patay-gutom, and nonchalant son who wakes her up at 3 am in the morning for food : )) 
+ his name is matcha latté and you can follow him on ig (matchaa.lattei). he doesn't eat leftover whiskas that's why she suffers
+  now financially to support his child because he is so maarte. send help. gcash: 09756106913
+ 
+ She has a girlfriend, her name is Krystel. They are high school lovers since they were in 7th and 8th grade. Slay mga vadings.
+ 
+ She is a journalist for almost 9 years already. She's a sports writer but she's a lampa so ironically, she doesn't play any sports.
+ 
+ She's a big fangirl of EXO, lauv, Sabrina Carpenter, BINI,  and everyone. She also loves watching vlogs of Alliana Dolina, Rei Germar,
+  Ry Velasco, Thatsbella, Kim Kianna Dy, Dy sisters, Pam Swing and gals. She can literally spend her 24 hours on youtube. Also, she's into 
+  UAAP and PVL since she was in 5th grade up until now. Animo lozol.
+      </footer>
+   </div>
+     
+   </section>
+
+   <section class="notes" id="notes">
+    <div class="note_title"><h1 class="notetitle">Note:</h1></div>
+    <div class="notecontainer">
+    </div><p class="d2"><b> Hi, it's Princess Grace!</b> <br>
+            I personally wanted to share this special note to remind you that above all else, 
+      it's important to know yourself – even the smallest details like that mole on your body,
+      your mannerisms, your go-to comfort food when you're sad, and the quirkiest things you do.
+      I believe we shouldn't be strangers to ourselves; we should be the first to know who we really are, 
+      what we're capable of, and what makes us happiest. Be that girl who loves pink so much, 
+      or that sweet lady who wears all black. Wear those baggy jeans or your tiniest skirt, 
+      whatever you are most comfortable with. Never mind your neighbors; court that cute little girl you saw at the café,
+       make the move. After all, it is us who make us.
+      </p>
+    </div>
+   </section>
+
+   <section class="review" id="review">
+    <h1 class="heading">Reviews</h1>
+    <div class="box-container">
+      <div class="box">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>my bestie in all things and above all, one of my favorite pet peeve( literal na fave pet😝😝) HAHAHAHAHH. 
+          Very special to my life kasi hindi mo ako gina pabayaan kung may need ko kaya mag shat na tayo next week pls. 
+          Always ga listen sa mga rants ko sa buhay pero kadlawan lang 😡😡😡.  I'm grateful for every moment nga gina spend 
+          ta together bisan tupaday lang ta balay pero waay gyapon ta gakitaay huhu. Missing you so much sana wag mo na i-post yong
+           vid sa bday ko kasi mag 21 na tayo, magpa tubo kana buot pls😔😔. 
+          Love u always ateco sana mabuhai ka hangga't gusto mo kasi ayaw q na mag engineer hehe.</p>
+        <span class="fa-qoute-right"></span>
+      </div>
+  
+      <div class="box">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>My life, my soul, my everything.
+          You are like:
+          A missing piece in my incomplete jigsaw puzzle.
+          The color palette in this grayscale world.
+          A fertile soil that makes my flowers bloom.
+          Like a ukelele, a Rubik's cube, and a phone that makes me want to touch and feel.
+          And just like a tasty chimkenjoy, that makes me want to indulge and devour. 
+          A boost to my serotonin.
+          And lastly, my ride home and my ride or die wavi. </p>
+        <span class="fas fa-qoute-right"></span>
+      </div>
+  
+      <div class="box">
+        <div class="stars">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>An empath beyond her own good, she might have majored in becoming a professional doormat for those she deeply cares about.
+           She doesn't learn her lessons once, twice, or thrice. Her stubbornness surpasses what is physically human. Good thing she's got humor. 
+           That makes up for a lot of her self-destruction, and she's a great friend. One that people would kill to have.
+        </p>
+        <span class="fas fa-qoute-right"></span>
+      </div>
+  
+      <div class="box">
+        <div class="stars">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star" aria-hidden="true"></i>
+          <i class="fa fa-star"></i>
+        </div>
+        <p>You kinda look so normal for others, I thought??HAHHAAHAH pero for me you're so great in everything.
+          Gina hambal mo lang gani ko nga nami mag BAELS na namian naman ko kag nag hinayang na wala gi kuha HAHHAHAAH and
+           I love talking to you especially sharing personal things kay wala ka ga entry na ako gani chu chu chu HAHAHAHAAHAH gapa
+            mati kalang gid bisan nonsense na HAHAHAHAHA luv u!</p>
+        </div>
+        <span class="fas fa-qoute-right"></span>
+      </div>
+    </div>
+  </section>
+
+    <section class="contact" id="contact">
+      <div class="socials"></div>
+      <div class="wrapper">
+        <a href="https://www.facebook.com/douceeeeex?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer">
+          <div class="icon facebook">
+            <div class="tooltip">
+               Facebook
+            </div>
+            <span><i class="fab fa-facebook-f"></i></span>
+         </div>
+        </a>
+<a href="https://x.com/douceeeeex?t=AYO1HLv8HXkCs0PPynBsSQ&s=09" target="_blank" rel="noopener noreferrer">
+  <div class="icon twitter">
+    <div class="tooltip">
+       Twitter
+    </div>
+    <span><i class="fab fa-twitter"></i></span>
+ </div>
+</a>
+  <a href="https://www.instagram.com/invites/contact/?i=sdeje8pw9su0&utm_content=e7333z1" target="_blank" rel="noopener noreferrer"><div class="icon instagram">
+    <div class="tooltip">
+       Instagram
+    </div>
+    <span><i class="fab fa-instagram"></i></span>
+ </div></a>
+        <a href="https://open.spotify.com/user/312d3a7x4vkulhqhjjc26a22whrm?si=zF8G3T6MTwalkS-wHkZNQw" target="_blank" rel="noopener noreferrer"><div class="icon github">
+          <div class="tooltip">
+             Spotify
+          </div>
+          <span><i class="fab fa-spotify"></i></span>
+       </div></a>
+        
+     </div>
+        </div>
+    </section>
+ </main>
+  </body>
+</html>
